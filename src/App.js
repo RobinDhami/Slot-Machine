@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const SlotM = () => {
+  let x = "😄";
+  let y = "😄";
+  let z = "😠";
+
+  if( (x === y) && (y === z)){
+    return (
+      <>
+        <div className="slot_inner">
+          <h1> {""}
+            {x} {y} {z} {""}
+          </h1>
+          <h1>This is matching</h1>
+          <hr />
+        </div>
+      </>
+      
+    )
+  }
+  else {
+    return (
+      <>
+        <div className="slot_inner">
+          <h1> {""}
+            {x} {y} {z} {""}
+          </h1>
+          <h1>This is not matching</h1>
+          <hr />
+        </div>
+      </>
+    );
+  }
+};
+const App = () => {
+  return (<>
+    <h1 className="heading_style"> 🎰  Welcome to {""}<span style={{
+      fontWeight: "bold"
+    }}>Slot machine game</span> 🎰 </h1>
+    <SlotM />
+  </>)
+};
 
 export default App;
